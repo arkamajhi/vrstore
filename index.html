@@ -1,0 +1,85 @@
+<html>
+  <head>
+    <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+    <script src="https://unpkg.com/aframe-event-set-component@3.0.3/dist/aframe-event-set-component.min.js"></script>
+  </head>
+  <body>
+    <a-scene id="updateMe" shadow="type: pcfsoft; autoUpdate: true" visible="true" background="color: #5e5e5e" inspector="" keyboard-shortcuts="" screenshot="" vr-mode-ui="" device-orientation-permission-ui="">
+
+      <!--a-assets>
+        <video id="vid_room1" src="lakme.mp4" preload=""></video>
+      </a-assets-->
+
+      <a-entity id="sphere" visible="false" geometry="primitive: sphere; radius: 5" material="color: #EF2D5E" position="22.16638 5 -55.60458" rotation="" scale="" shadow="cast: true"></a-entity>
+      <a-entity id="cylinder" visible="false" geometry="primitive: cylinder; height: 15; radius: 2" material="color: #FFC65D" position="3.62744 6.99598 -51.12136" shadow="cast: true"></a-entity>
+      <a-entity id="box" visible="false" geometry="width: 4; height: 3; depth: 8" material="color: #334a71; flatShading: false; wireframe: false; visible: true; transparent: false; npot: false; blending: normal" position="6.75571 1.5 -50.93274" rotation="" scale="" shadow="cast: true"></a-entity>
+
+
+      <a-entity id="room1">
+        <a-entity id="arch_room1">
+          <a-plane id="floor_room1" position="" rotation="-90 0 0" width="4" height="4" material="color: #202b2d" geometry="; height: 30; width: 30" scale="1 1 1" shadow="; receive: true; cast: true"></a-plane>
+          <a-plane id="ceiling_room1" position="0 12.5 0" rotation="90 0 0" width="4" height="4" material="color: #202b2d" geometry="; height: 30; width: 30" scale="1 1 1" shadow="; receive: true; cast: true"></a-plane>
+          <a-entity id="col1" geometry="width: 1; height: 10; depth: 2" material="color: #334a71; flatShading: false; wireframe: false; visible: true; transparent: false; npot: false; blending: normal" position="14.5 5 14" rotation="" scale="" shadow="cast: true"></a-entity>
+          <a-entity id="col2" geometry="width: 1; height: 12.5; depth: 30" material="color: #334a71; flatShading: false; wireframe: false; visible: true; transparent: false; npot: false; blending: normal" position="-14.5 6 0" rotation="" scale="" shadow="cast: true"></a-entity>
+          <a-entity id="col3" geometry="width: 30; height: 12.5; depth: 1" material="color: #334a71; flatShading: false; wireframe: false; visible: true; transparent: false; npot: false; blending: normal" position="0 6 -14.5" rotation="" scale="" shadow="cast: true"></a-entity>
+          <a-entity id="col4" geometry="width: 1; height: 10; depth: 2" material="color: #334a71; flatShading: false; wireframe: false; visible: true; transparent: false; npot: false; blending: normal" position="14.5 5 -4" rotation="" scale="" shadow="cast: true"></a-entity>
+          <a-entity id="beam1" geometry="width: 1; height: 2.5; depth: 20" material="color: #334a71; flatShading: false; wireframe: false; visible: true; transparent: false; npot: false; blending: normal" position="14.5 11.25 5" rotation="" scale="" shadow="cast: true"></a-entity>
+          <a-entity id="beam2" geometry="width: 1; height: 2.5; depth: 20" material="color: #334a71; flatShading: false; wireframe: false; visible: true; transparent: false; npot: false; blending: normal" position="14.5 1.25 5" rotation="" scale="" shadow="cast: true"></a-entity>
+        </a-entity>
+
+        <a-entity id="lights_room1">
+          <a-entity id="room1_tabletoplight1" visible="true" rotation="-90 0 0" light="intensity: 0.49; castShadow: true; type: spot;; penumbra: 1; angle: 50; distance: 100" position="7.08009 12.42896 3.75279"></a-entity>
+
+          <a-entity id="room1_pointlight1" visible="true" rotation="0 0 0" light="intensity: 0.5; castShadow: false; type: point;; penumbra: 0.5; angle: 60; shadowCameraVisible: false" position="0 12.49525 0"></a-entity>
+
+          <a-entity id="room1_ceilinglights" visible="false" rotation="8.77 0 0" position="0 -1.79 -0.73963">
+            <a-entity id="room1_ceilinglight1" visible="true" rotation="-60.71920233898899 -0.6359831525952138 8.216787739971137" light="intensity: 1.5; castShadow: false; type: spot;; penumbra: 0.5; angle: 40; shadowCameraVisible: false" position="8.94983 12.49525 -13.01803"></a-entity>
+            <a-entity id="room1_ceilinglight2" visible="true" rotation="-60.71920233898899 -0.6359831525952138 8.216787739971137" light="intensity: 1.5; castShadow: false; type: spot;; penumbra: 0.5; angle: 40; shadowCameraVisible: false" position="2.94127 12.49525 -13.01803"></a-entity>
+            <a-entity id="room1_ceilinglight3" visible="true" rotation="-60.71920233898899 -0.6359831525952138 8.216787739971137" light="intensity: 1.5; castShadow: false; type: spot;; penumbra: 0.5; angle: 40; shadowCameraVisible: false" position="-3.84488 12.49525 -13.01803"></a-entity>
+            <a-entity id="room1_ceilinglight4" visible="true" rotation="-60.71920233898899 -0.6359831525952138 8.216787739971137" light="intensity: 1.5; castShadow: false; type: spot;; penumbra: 0.5; angle: 40; shadowCameraVisible: false" position="-9.877 12.49525 -13.01803"></a-entity>
+          </a-entity>
+
+
+        </a-entity>
+
+        <!--a-entity id="video">
+          <a-video position="-0.25 5.75 -13.83" autoplay="true" loop="true"
+           src="#vid_room1"
+           material="shader:flat; side:double; transparent:true;"
+           geometry="mergeTo:null; primitive:circle; radius:4.5">
+          </a-video>
+          <a-torus color="#43A367" arc="270" radius="5" radius-tubular="0.1" material="color: #1c1c1c" geometry="arc: 360; radius: 4.65" position="-0.25 5.74 -13.77"></a-torus>
+        </a-entity-->
+
+        <a-entity id="tables_room1">
+          <a-entity id="tableset1">
+            <a-entity id="table1" geometry="width: 4; height: 3; depth: 8" material="color: #334a71; flatShading: false; wireframe: false; visible: true; transparent: false; npot: false; blending: normal" position="6.75571 1.5 4.23284" rotation="" scale="" shadow="cast: true"></a-entity>
+
+            <a-box id="a1" material="color: #704ad9" shadow="cast: true; receive: true" scale="1.33465 1.33465 1.33465" position="6.98657 4.04546 1.69584"
+            animation="property: rotation; to: 0 360 0 ; loop: true; dur: 5000" rotation="0 0 0"
+            event-set__enter="_event: mouseenter; color: #8FF7FF"
+            event-set__leave="_event: mouseleave; color: #704ad9"></a-box>
+
+            <a-sphere id="a2" shadow="cast: true; receive: true" scale="0.70572 0.70572 0.70572" position="6.90215 4.19825 6.35517" radius="1.25" color="#EF2D5E"></a-sphere>
+            <a-cylinder id="a3" shadow="cast: true; receive: true" scale="1.21309 1.77164 1.21309" position="6.97685 4.7973 3.89328" radius="0.5" height="1.5" color="#FFC65D"></a-cylinder>
+          </a-entity>
+
+        </a-entity>
+      </a-entity>
+
+
+
+      <a-entity id="rig" rotation="" position="-7.44616 4.69927 20.86926">
+        <a-camera id="camera" camera="" position="2.63902 2.6439 -23.28968" rotation="-13.407212406061273 -88.23550045014713 0" look-controls="" wasd-controls="" data-aframe-inspector-original-camera="">
+          <a-cursor visible="true" material="color: #787878" raycaster="" cursor="" geometry=""></a-cursor>
+        </a-camera>
+      </a-entity>
+
+      <a-entity id="ambientlight" visible="true" light="color: #ffffff; type: ambient; castShadow: false; intensity: 0.22"></a-entity>
+
+      <div class="a-loader-title" style="display: none;">Hello, World! • A-Frame</div>
+    </a-scene>
+
+
+  </body>
+</html>
