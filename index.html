@@ -2,6 +2,7 @@
   <head>
     <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
     <script src="https://unpkg.com/aframe-event-set-component@3.0.3/dist/aframe-event-set-component.min.js"></script>
+    <script src="https://unpkg.com/aframe-text-geometry-component@0.5.1/dist/aframe-text-geometry-component.min.js"></script>
 
   </head>
   <body>
@@ -16,6 +17,12 @@
       <a-entity id="cylinder" visible="false" geometry="primitive: cylinder; height: 15; radius: 2" material="color: #FFC65D" position="3.62744 6.99598 7.00652" shadow="cast: true"></a-entity>
       <a-entity id="box" visible="false" geometry="width: 4; height: 3; depth: 8" material="color: #334a71; flatShading: false; wireframe: false; visible: true; transparent: false; npot: false; blending: normal" position="11.60784 6.75939 3.71165" rotation="" scale="" shadow="cast: true"></a-entity>
 
+      <a-assets>
+        <a-asset-item id="optimerBoldFont" src="https://rawgit.com/mrdoob/three.js/dev/examples/fonts/optimer_bold.typeface.json"></a-asset-item>
+      </a-assets>
+
+      <a-entity text-geometry="value: What's up"></a-entity>
+      <a-entity text-geometry="value: Dog?; font: #optimerBoldFont"></a-entity>
 
       <a-entity id="room1">
         <a-entity id="arch_room1">
